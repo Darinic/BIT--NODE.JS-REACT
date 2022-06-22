@@ -42,6 +42,7 @@ const loginSchema = (req, res, next) => {
 
 Router.post('/login', loginSchema, async(req, res) => {
     const user = await getUserByEmail(req.body.email)
+    
 
     if(!user) {
         res.json({message: 'Nepavyko rasti tokio vartotojo', status: 'danger'})
